@@ -7,13 +7,17 @@ main{
     height: 88vh;
 }
 
-main > div{
+main  div{
     height: 100%;
 }
 
 footer{
     height: 4vh;
     overflow-y: hidden;
+}
+
+button#resetButton{
+    height: 2rem;
 }
 
 .squareElement{
@@ -37,5 +41,5 @@ footer{
 }
 
 .active{
-    background-color: rgb(48, 97, 0);
+    background-color: rgb(128, 255, 0);
 }

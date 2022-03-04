@@ -8,9 +8,12 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro. */
 let selectedDifficulty = document.getElementById("difficultySelector");
 let mineField = document.getElementById("field");
 let button = document.getElementById("playButton");
+let resetButton = document.getElementById("resetButton");
 let squareElement = "";
 
 button.addEventListener("click" , function(){
+
+    resetButton.classList.remove("d-none")
     if(selectedDifficulty.value === "easy"){
 
         for(let i = 0; i < 100; i++){
@@ -18,6 +21,9 @@ button.addEventListener("click" , function(){
             squareElement.innerHTML = i + 1;
             squareElement.classList.add("squareElement" , "hundred");
             mineField.appendChild(squareElement);
+            squareElement.addEventListener("click" , function(){
+                squareElement.classList.toggle("active");
+            })
         }
 
     }else if(selectedDifficulty.value === "intermediate"){
@@ -27,6 +33,9 @@ button.addEventListener("click" , function(){
             squareElement.innerHTML = i + 1;
             squareElement.classList.add("squareElement" , "eighty");
             mineField.appendChild(squareElement);
+            squareElement.addEventListener("click" , function(){
+                squareElement.classList.toggle("active");
+            })
         }
 
     }else{
@@ -36,11 +45,18 @@ button.addEventListener("click" , function(){
             squareElement.innerHTML = i + 1;
             squareElement.classList.add("squareElement" , "fifty");
             mineField.appendChild(squareElement);
+            squareElement.addEventListener("click" , function(){
+                squareElement.classList.toggle("active");
+            })
         }
 
     }
 });
 
-squareElement.addEventListener("click" , function(){
-    squareElement.classList.add("active")
-});
+
+
+resetButton.addEventListener("click", function(){
+    window.location.reload()
+})
+
+
