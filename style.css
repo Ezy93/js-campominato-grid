@@ -7,6 +7,17 @@ main{
     height: 88vh;
 }
 
+main > div{
+    height: 100%;
+}
+
 footer{
     height: 4vh;
+}
+
+.square-element-hundred{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    background-color: aquamarine;
+    border: 3px white solid
 }
